@@ -9,29 +9,17 @@
 </head>
 
 <body>
-    <div id="tv">
-        <div class="tv" v-if="signal">
+    div id="tv">
+        <div class="tv">
             <div class="screen">
-                <img class="program" src="black.jpg">
+                <img  v-if="signal" class="program" src="black.jpg">
+                <img v-else class="program" src="tenor.gif">
             </div>
             <button class="switch" v-on:click="toggle">
-                <div class="white">
-                    <div class="icon">|</div>
-                </div>
+                <div v-if="signal" class="icon">O</div>
+                <div v-else class="icon">|</div>
             </button>
         </div>
-
-        <div class="tv" v-else="signal">
-            <div class="screen">
-                <img class="program" src="tenor.gif">
-            </div>
-            <button class="switch" v-on:click="toggle">
-                <div class="white">
-                    <div class="icon">|</div>
-                </div>
-            </button>
-        </div>
-        <button v-on:click="toggle"></button>
     </div>
 </body>
 <script src="vue.js"></script>
@@ -39,29 +27,3 @@
 
 </html>
 
-<!-- 
-    <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="assignment.css">
-</head>
-
-<body>
-    <div class="tv">
-        <div class="screen">
-            <img class="program" src="tenor.gif">
-        </div>
-        <div class="switch">
-            <div class="white">
-                <div class="icon">|</div>
-            </div>
-        </div>
-    </div>
-</body>
-
-</html>
- -->
